@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue basic | Method Property</title>
+</head>
+<body>
+	<div id="app">
+		<input type="radio" v-model="radioButton" value="mangga">Mangga
+		<br>
+		<input type="radio" v-model="radioButton" value="apple">Mangga2
+		<br>
+		result : {{ radioButton }}
+		<br>
+		<input type="checkbox" v-model="checkbox" value="sepak bola">Sepakbola
+		<br>
+		<input type="checkbox" v-model="checkbox" value="masak">Masak
+		<br>
+		result : {{ checkbox }}
+		<ul>
+			<li v-for="choice in checkbox">
+				{{ choice }}
+			</li>
+		</ul>
+		<br>
+		<select v-model="select">
+			<option> Choice position</option>
+			<option value="ceo">ceo</option>
+			<option value="cto">cto</option>
+		</select>
+		<br>
+		My position : {{ select }}
+		
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="js/radio.js"></script>
+</body>
+</html>
