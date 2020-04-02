@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event hendler - vue.js</title>
+	
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="message='jos ngunu vue js lek'">
+			hello
+		</button>
+		<button @click="showAlert">developer vue</button>
+		{{ message }}
+		<div class="cart" v-on:click="cart()">Beli</div>{{ resultCart }}
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data:{
+				message: '',
+				resultCart: null
+			},
+			methods:{
+				showAlert: function(){
+					alert('hallo alert dev');
+				},
+				cart: function(){
+					return this.resultCart = 10 * 10;
+				}
+			}
+		});
+	</script>
+</body>
+</html>
