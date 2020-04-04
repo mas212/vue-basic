@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue basic | Loop array</title>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="vehicle in vehicles">
+				Type: {{ vehicle.type }}
+				Brand: {{ vehicle.brand }}
+				Color: {{ vehicle.color }}
+			</li>
+			<li v-for="obj in object">
+				{{ obj }}
+			</li>
+		</ul>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		var app 		= new Vue({
+			el: '#app',
+			data:{
+				vehicles:[
+					{
+						type: 'Car', 
+						brand: 'Toyota', 
+					 	color: 'Black'
+					},
+					{
+						type: 'Motor Cyle',
+						brand: 'Honda',
+						color: 'White'
+					},
+				],
+				object:{
+					firstName : 'Jhon',
+					lastName: 'Doe',
+					age: 30		
+				}
+			},
+		});
+	</script>
+</body>
+</html>
