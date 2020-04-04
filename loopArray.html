@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue basic | Loop array</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="content">
+		<button @click="addVehicle">add</button>
+		<br>
+		<ul>
+			<li v-for="(vehicle, index) in vehicles">
+				<button @click="removeVehicle(index)">x</button>
+				{{ vehicle }}
+			</li>
+		</ul>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		var app 		= new Vue({
+			el: '#app',
+			data:{
+				content: '',
+				vehicles: ['car', 'motorcycle', 'bike']
+			},
+			methods:{
+				addVehicle: function(){
+					this.vehicles.push(this.content);
+					this.content = '';
+				},
+				removeVehicle: function(index){
+					this.vehicles.splice(index, 1);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
