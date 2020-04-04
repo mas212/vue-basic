@@ -11,7 +11,8 @@
 		</button>
 		<button @click="showAlert">developer vue</button>
 		{{ message }}
-		<div class="cart" v-on:click="cart()">Beli</div>{{ resultCart }}
+		<div class="cart" v-on:click="cart()">Beli</div>{{ resultCart }} 
+		<button v-on:click="total(1000)">Total</button> {{ totalList }}
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script type="text/javascript">
@@ -19,7 +20,8 @@
 			el: '#app',
 			data:{
 				message: '',
-				resultCart: null
+				resultCart: null,
+				totalList: null,
 			},
 			methods:{
 				showAlert: function(){
@@ -27,6 +29,9 @@
 				},
 				cart: function(){
 					return this.resultCart = 10 * 10;
+				},
+				total: function(cart1){
+					return this.totalList 	= 20 + cart1;
 				}
 			}
 		});

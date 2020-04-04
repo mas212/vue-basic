@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue basic | Method Property</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-on:keyup.enter="message='your first enter here'">
+		<input type="text" 	@keyup.esc="escKey"
+						 	@keyup.space="spaceKey"
+						 	@keyup.up="upKey"
+						 	@keyup.down="downKey">
+		{{ message }}
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el : '#app',
+			data: {
+				message: '',
+			},
+			methods:{
+				escKey: function(){
+					this.message = 'your enter esc key'
+				},
+
+				spaceKey: function(){
+					this.message 	= 'Your enter space key'
+				},
+
+				upKey: function(){
+					this.message 	= 'Your enter up key'
+				},
+
+				downKey: function(){
+					this.message 	= 'Your Enter down'
+				}
+			}
+		});
+	</script>
+</body>
+</html>
