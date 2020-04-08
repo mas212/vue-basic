@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue basic | Method Property</title>
+</head>
+<body>
+	<div id="app">
+		<greeting></greeting>
+		<button-counter></button-counter>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript">
+		Vue.component('greeting', {
+			template: `
+				<div class='hello-vue'>Hello, Vue</div>`
+		});
+
+		Vue.component('button-counter',{
+			data: function(){
+				return{
+					counter: 0
+				}
+			},
+			template: '<button v-on:click="counter++">Clik me {{ counter }} times</button>'
+		});
+
+		var app = new Vue({
+			el: '#app'
+		});
+	</script>
+</body>
+</html>
